@@ -35,16 +35,24 @@ while joke == "yes":
         joke = input("Do you want to hear another joke or are you finished? ")  # Asks the User if they'd like to listen to another joke
 
 
-scoring = [] # Purpose: Empty List for the User's score of the game, which allows the scoring process to have a result.
-if joke == "finished":
-    rate = int(input("Please rate our game 1-10! ")) # Asks for User's rating.
-    scoring = rate # Inputs rate into empty list, so it can go through scoring process.
-    def scoring_process(scoring): # Function for scoring process.
-        final_score = int(scoring * 10) # Uses scoring list and multiplies it by last to get final score percentage
+
+final_score = [] # Purpose: Empty List for the User's score of the game, which allows the scoring process to have a result.
+
+def scoring_process(scoring): # Function for scoring process.
+    for score in scoring:
+        if joke == "finished":
+            rate = scoring
+            score = int(rate * 10) 
+            final_score = score
+               
         return final_score
-    result = str(scoring_process(scoring))
-    print((result) + " percent satisfaction rate") # Prints out function result.
-    if int(result) > 70:
+    
+    scoring = input("Please rate our game 1-10! ") # Asks for User's rating.
+    result = scoring_process(scoring)
+    print((result), " percent satisfaction rate") # Prints out function result.
+    
+
+    if result > 70:
         friend = input("Glad to hear you enjoyed the game! Would you recommend this game to a friend? ") # Asks User if they would recommend this game, ONLY if satisfaction rate is above 70
     else:
         unfortunate = input("Sad to hear that you didn't enjoy the game.")
