@@ -51,6 +51,7 @@ def scoring_process(scoring): # Function for scoring process.
     result = scoring_process(scoring)
     print((result), " percent satisfaction rate") # Prints out function result.
     
+    # (SAID TO CHANGE VARIABLES TO PREVENT PRINTING 10 TIMES)
 
     if result > 70:
         friend = input("Glad to hear you enjoyed the game! Would you recommend this game to a friend? ") # Asks User if they would recommend this game, ONLY if satisfaction rate is above 70
